@@ -1,0 +1,103 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "url": "https://raw.githubusercontent.com/mpaa0003/-2179----Data-Visualization---/refs/heads/main/Asgn2_Datasets/SalesValue.json"
+  },
+  "hconcat": [
+    {
+      "title": "Physical Sales Over Time",
+      "transform": [{"filter": "datum.Medium === 'Physical'"}],
+      "vconcat": [
+        {
+          "width": 320,
+          "height": 220,
+          "mark": {"type": "area", "color": "#ca8861", "opacity": 0.8},
+          "encoding": {
+            "x": {
+              "field": "Year",
+              "type": "temporal",
+              "scale": {"domain": {"param": "brush"}},
+              "axis": {"title": ""}
+            },
+            "y": {
+              "aggregate": "sum",
+              "field": "Sales-Value",
+              "type": "quantitative",
+              "title": "Sales Value",
+              "axis": {"format": "s"}
+            }
+          }
+        },
+        {
+          "width": 320,
+          "height": 50,
+          "mark": {"type": "area", "color": "#ca8861", "opacity": 0.4},
+          "params": [
+            {
+              "name": "brush",
+              "select": {"type": "interval", "encodings": ["x"]}
+            }
+          ],
+          "encoding": {
+            "x": {
+              "field": "Year",
+              "type": "temporal",
+              "title": "Drag to filter timeline"
+            },
+            "y": {
+              "aggregate": "sum",
+              "field": "Sales-Value",
+              "type": "quantitative",
+              "axis": {"tickCount": 3, "grid": false, "title": null}
+            }
+          }
+        }
+      ]
+    },
+    {
+      "title": "Digital Sales Over Time",
+      "transform": [{"filter": "datum.Medium === 'Digital'"}],
+      "vconcat": [
+        {
+          "width": 320,
+          "height": 220,
+          "mark": {"type": "area", "color": "#675193", "opacity": 0.8},
+          "encoding": {
+            "x": {
+              "field": "Year",
+              "type": "temporal",
+              "scale": {"domain": {"param": "brush"}},
+              "axis": {"title": ""}
+            },
+            "y": {
+              "aggregate": "sum",
+              "field": "Sales-Value",
+              "type": "quantitative",
+              "title": null,
+              "axis": {"format": "s"}
+            }
+          }
+        },
+        {
+          "width": 320,
+          "height": 50,
+          "mark": {"type": "area", "color": "#675193", "opacity": 0.4},
+          "encoding": {
+            "x": {
+              "field": "Year",
+              "type": "temporal",
+              "title": "Drag to filter timeline"
+            },
+            "y": {
+              "aggregate": "sum",
+              "field": "Sales-Value",
+              "type": "quantitative",
+              "axis": {"tickCount": 3, "grid": false, "title": null}
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "config": {"view": {"stroke": "transparent"}}
+}

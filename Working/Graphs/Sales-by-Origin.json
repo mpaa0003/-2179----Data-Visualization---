@@ -1,0 +1,56 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "A radial chart showing sales % by origin, selectable by year.",
+  "data": {
+    "url": "https://raw.githubusercontent.com/mpaa0003/-2179----Data-Visualization---/refs/heads/main/Asgn2_Datasets/SalesByOrigin.json"
+  },
+  "width": 400,
+  "height": 400,
+  "params": [
+    {
+      "name": "Select_Year",
+      "value": 2022,
+      "bind": {
+        "input": "select",
+        "options": [2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022],
+        "name": "Choose Year: "
+      }
+    }
+  ],
+  "transform": [{"filter": "datum.Year == Select_Year"}],
+  "encoding": {
+    "theta": {"field": "percent", "type": "quantitative", "stack": true},
+    "radius": {
+      "field": "percent",
+      "scale": {"type": "sqrt", "zero": true, "rangeMin": 30}
+    },
+    "color": {
+      "field": "Origin",
+      "type": "nominal",
+      "scale": {"range": ["#675193", "#ca8861", "#c7c7c7"]},
+      "legend": {"orient": "bottom", "title": null}
+    }
+  },
+  "layer": [
+    {
+      "mark": {
+        "type": "arc",
+        "innerRadius": 30,
+        "stroke": "#fff",
+        "tooltip": true
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "radiusOffset": 15,
+        "fontSize": 12,
+        "fontWeight": "bold"
+      },
+      "encoding": {
+        "text": {"field": "percent", "type": "quantitative", "format": ".1f"}
+      }
+    }
+  ],
+  "config": {}
+}

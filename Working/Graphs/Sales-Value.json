@@ -1,0 +1,48 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "data": {
+    "url": "https://raw.githubusercontent.com/mpaa0003/-2179----Data-Visualization---/refs/heads/main/Asgn2_Datasets/SalesValue.json"
+  },
+  "width": 600,
+  "height": 400,
+  "transform": [
+    {
+      "window": [{"op": "dense_rank", "as": "medium_rank"}],
+      "sort": [{"field": "Medium", "order": "descending"}]
+    },
+    {
+      "calculate": "datum.medium_rank === 1 ? -datum['Sales-Value'] : datum['Sales-Value']",
+      "as": "Signed-Sales-Value"
+    }
+  ],
+  "mark": "area",
+  "encoding": {
+    "y": {
+      "field": "Year",
+      "type": "nominal",
+      "title": "Year",
+      "axis": {"title": "Year", "labelPadding": 10, "ticks": false},
+      "sort": "ascending"
+    },
+    "x": {
+      "aggregate": "sum",
+      "field": "Signed-Sales-Value",
+      "type": "quantitative",
+      "title": "Sales Value - $",
+      "stack": null,
+      "axis": {"format": "s"}
+    },
+    "color": {
+      "field": "Medium",
+      "type": "nominal",
+      "scale": {"range": ["#675193", "#ca8861"]},
+      "legend": {"orient": "top", "title": null}
+    }
+  },
+  "config": {
+    "background": "transparent",
+    "view": {"stroke": "transparent"},
+    "axisY": {"grid": true, "gridColor": "#e0e0e0", "gridWidth": 1},
+    "axisX": {"grid": false}
+  }
+}
