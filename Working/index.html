@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- import Vega Lite here -->
+    <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Music Impact Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="chart-container">
+        <h1 class="container-title">Australia's Music Consumption</h1>
+        
+        <!-- Chart 1 -->
+        <h2 class="chart-header">Personal Impacts of Live Shows</h2>
+        <div id="vis"></div>
+
+        <hr class="chart-divider"> 
+        
+        <!-- Chart 2 -->
+        <h2 class="chart-header">Physical vs. Digital Music Sales</h2>
+        <div id="vis2"></div>
+
+        <!-- Chart 3 -->
+        <div id="vis3"></div>
+
+        <hr class="chart-divider"> 
+
+        <!-- Chart 4 -->
+        <h2 class="chart-header">Sales by Genre</h2>
+        <div id="vis4"></div>
+
+        <hr class="chart-divider"> 
+
+        <!-- Chart 5 -->
+        <h2 class="chart-header">Sales by Origin</h2>
+        <div id="vis5"></div>
+    </div>
+
+    <script type="text/javascript">
+        // Replace 'Live-Shows.json' with the exact local path to your file if it's in another folder
+        var spec = "Graphs/Live-Shows.json";
+        var spec2 = "Graphs/Sales-Value.json";
+        var spec3 = "Graphs/Sales-by-Genre.json";
+        var spec4 = "Graphs/Sales-by-Origin.json";
+        var spec5 = "Graphs/Physical-Digital.json";
+        
+        vegaEmbed('#vis', spec, {"actions": false})
+            .then(function(result) {
+                // Access the Vega View instance if you want to perform advanced API adjustments later
+            })
+            .catch(console.error);
+
+        vegaEmbed('#vis2', spec2, {"actions": false})
+            .then(function(result) {
+                // Second chart
+            })
+            .catch(console.error);
+
+        vegaEmbed('#vis3', spec5, {"actions": false})
+            .then(function(result) {
+                // Third chart
+            })
+            .catch(console.error);
+
+        vegaEmbed('#vis4', spec3, {"actions": false})
+            .then(function(result) {
+                // Fourth chart
+            })
+            .catch(console.error);
+
+        vegaEmbed('#vis5', spec4, {"actions": false})
+            .then(function(result) {
+                // Fifth chart
+            })
+            .catch(console.error);
+    </script>
+
+    
+
+</body>
+</html>
