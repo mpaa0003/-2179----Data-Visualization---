@@ -5,19 +5,31 @@
   "data": {
     "url": "https://raw.githubusercontent.com/mpaa0003/-2179----Data-Visualization---/refs/heads/main/Asgn2_Datasets/impact.json"
   },
-  "config": {"background": "transparent", "view": {"stroke": "transparent"}},
+  "config": {
+    "background": "transparent", 
+    "view": {"stroke": "transparent"}
+  },
   "transform": [
     {
       "calculate": "length(datum.category) > 25 ? [substring(datum.category, 0, indexof(datum.category, ' ', 20)), substring(datum.category, indexof(datum.category, ' ', 20) + 1)] : datum.category",
       "as": "wrapped_category"
+    },
+    {
+      "calculate": "{'A Very Big Impact': 1, 'A Big Impact': 2, 'Some Impact': 3, 'Not Much Impact': 4, 'No Impact at all': 5}[datum.degree]",
+      "as": "degree_rank"
     }
   ],
   "mark": "bar",
   "encoding": {
-    "x": {"aggregate": "sum", "field": "percent", "axis": {"labelPadding": 10}},
+    "x": {
+      "aggregate": "sum", 
+      "field": "percent", 
+      "axis": {"labelPadding": 10}
+    },
     "y": {
       "field": "wrapped_category",
       "type": "nominal",
+      "sort": "-x",
       "axis": {
         "title": null, 
         "labelPadding": 10,
@@ -37,6 +49,11 @@
         ],
         "range": ["#1a1c6b", "#393b89", "#5b60a1", "#7b81bd", "#9ca3d6"]
       }
+    },
+    "order": {
+      "field": "degree_rank",
+      "type": "quantitative",
+      "sort": "ascending"
     }
   }
 }
