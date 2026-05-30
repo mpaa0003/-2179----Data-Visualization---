@@ -12,47 +12,181 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="top-container">
+        <h1>Music Consumption of Australians</h1>
+        <p>Matthew Emmanuel Paat | 36677175</p>
+    </div>
 
     <div class="chart-container">
-        <h1 class="container-title">Australia's Music Consumption</h1>
-        
+        <!-- Title 1 -->
+        <h1 class="container-title">Australian's Enjoyment of Music</h1>
+    
+
         <!-- Chart 1 -->
-        <h2 class="chart-header">Personal Impacts of Live Shows</h2>
-        <div id="vis"></div>
+        <div class="chart-row">
+            <div id="vis"></div>
+            
+            <div class="chart-description">
+                <h3 class="chart-header">Personal Impacts of Attending Live Shows</h3>
+                <p class="chart-text">The chart to the left shows the percentage of people and how much of an impact attending live music showings had on them. From here we can see how much music meant to Australians, with at least 90% of individuals reporting some level of positive impact towards their emotional well-being.</p>
+                <p class="chart-text">The live show attendees describe how going to these shows help them deal with stress, help relax, reduce depressive symptoms, and go as far as helping them meet new friends, sort of like a social outing.</p>
+            </div>
+        </div>
 
-        <hr class="chart-divider"> 
+        <hr class="chart-divider">
+
+        <!-- Chart 9 -->
+        <div class="chart-row">
+            <div class="chart-description">
+                <h3 class="chart-header">Music Listening Frequency by Age Group</h3>
+                <p class="chart-text">A recent survey done on Australians of differing age groups show varying frequencies of listening to Australian music. The results show that most Australians choose to listen to music of domestic origin.</p>
+                <p class="chart-text">This could imply that many Australiand do enjoy listening to local music. Although a good deal of Australians listen to Australian music often, local music isnt exactly the most dominant type of music being consumed.</p>
+            </div>
+
+            <div id="vis9"></div>
+        </div>
+
+        <hr class="empty-divider">
         
-        <!-- Chart 2 -->
-        <h2 class="chart-header">Physical vs. Digital Music Sales</h2>
-        <div id="vis2"></div>
+        <!-- Title 2 -->
+        <h2 class="container-title">Australia's Music Sales Insights</h2>
 
-        <!-- Chart 3 -->
-        <div id="vis3"></div>
+        <!-- Chart 6 -->
+        <div class="chart-row map-section-row">
+            <div class="chart-description">
+                <h3 class="chart-header">Global Music Market Rankings</h3>
+                <p class="chart-text">This map illustrates how global music market rankings have shifted over the past two decades. By moving the slider, you can track the historical trajectory of leading industries across different eras. The top of the list are generally ahead of the rest of the world by millions of dollars in revenue which make them dominant entities in the music industry.</p>
+                <p class="chart-text">Despite very dominant countries, Australia remain consistent appearing in in the top 10 largest music markets throughout the year 2000 - 2023, with it's highest ranking being 6th place.</p>
+            </div>
+            
+                <div id="vis6"></div>
+        </div>
 
-        <hr class="chart-divider"> 
+        <hr class="chart-divider">
+
+        <!-- Chart 2 & 3 -->
+            <div class="chart-row">
+                <div class="dual-chart-wrapper">
+                    <div id="vis2"></div>
+                    <div id="vis3"></div>
+                </div>
+            </div>
+
+        <h3 class="chart-header">Sales of Digital music compared to Physical music in Australia</h3>
+            <div class="text-row">
+                <p class="chart-text">
+                    Over time, the <span class="highlight-digital">digital</span> medium for music has skyrocketted in popularity, beating <span class="highlight-physical">physical</span> music sales and practically taking over it's place. From the graph we see how as <span class="highlight-digital">digital</span> music became more popular, <span class="highlight-physical">physical</span> music sales would drop along with it. From the graph e can see the only time where these sales were equal to eachother was somewhere during the year 2013, which was still in the earlier years of music being sold <span class="highlight-digital">digitally</span>.
+                </p>
+                <p class="chart-text">
+                    Another thing to note is how <span class="highlight-digital">digital</span> sales over time have exceeded even the peaks of <span class="highlight-physical">physically</span> sold music. One of the biggest factors for this is the accessibility of <span class="highlight-digital">digital</span> music, especially with it being able to be distributed anywhere given there is internet available. For australians, the rise in <span class="highlight-digital">digital</span> mediums have helped them discover more songs and music variety in general, leading to a larger music industry.
+                </p>
+            </div>
+            
+        <hr class="chart-divider">
+
 
         <!-- Chart 4 -->
-        <h2 class="chart-header">Sales by Genre</h2>
-        <div id="vis4"></div>
+        <div class="chart-row">
+            <div class="chart-description">
+                <h3 class="chart-header">Sales by Genre</h3>
+                <p class="chart-text">The table on the right shows the percentage of sales of a specific music genre relative to the sale of all music in Australia. We can see clearly that the 2 most popular genres being Rock music and Pop music. Rock being a genre with a long history, and pop being a generally loved genre even outside of Australia, with roughly half of the population mainly listening to it.</p>
+                <p class="chart-text">What's strange is how over time, the sales in each genre have slowly been converging on these two specific genres more and more, which leads to other genres of music being less popular overall. This could be due to the industry landscape and how since these two genres reign over the others, no artist would want to attemp to make music of those genres, therefore gravitating towards pop and rock songs, in order for their music to appeal to more people.</p>
+        </div>
+            
+            <div id="vis4"></div>
+        </div>
 
         <hr class="chart-divider"> 
 
         <!-- Chart 5 -->
-        <h2 class="chart-header">Sales by Origin</h2>
-        <div id="vis5"></div>
-    </div>
+        <div class="chart-section">
+            <h3 class="chart-header" style="text-align: center; margin-bottom: 20px;">Sales by Origin</h3>
+            
+            <div class="origin-row">
+                <div class="chart-text-side">
+                    <p class="chart-text">From this chart on the left, we can see the distribution of <span class="highlight-physical">international</span> and <span class="highlight-digital">domestic</span> music sales throughout the years. A certain trend with the data present is how throughout the years, the sales of both <span class="highlight-physical">international</span> and <span class="highlight-digital">domestic</span> music has stayed relatively the same since the beginning.</p>
+                </div>
 
+                <div id="vis5" class="chart-center"></div>
+
+                <div class="chart-text-side">
+                    <p class="chart-text">A reason for this is could be the close relationship Australia has towards music and the creation of it. Additionally, many australians, and people from other countries alike, also feel a sense of pride having music made from their home country, which is why despite the ever increasing <span class="highlight-physical">international</span> market, Australia's <span class="highlight-digital">domestic</span> sales remain intact.</p>
+                </div>
+            </div>
+        </div>
+
+        <hr class="empty-divider">
+        
+        <!-- Title 3 -->
+        <h1 class="container-title">The Future of Music in Australia</h1>
+
+        <!-- Chart 8 -->
+        <div class="chart-row">
+            <div class="chart-description">
+                <h3 class="chart-header-bump-right">The Music Market Based on Past Rankings</h3>
+                <p class="chart-text-bump-right">Although there are many aspects of the Australian music industry that supports the fact that it is doing well, the truth is, it's been on a steady slow decline over the past couple of years.</p>
+                <p class="chart-text-bump-right">The reasons for this decline is uncertain for now, but a very plausible explanation is the digitalization of music media which takes away revenue from almost all non-digital sales made from music, which includes things such as concerts, vinyl records, and even merchandise as well.</p>
+            </div>
+
+            <div id="vis8"></div>
+        </div>  
+
+        <hr class="chart-divider">
+
+        <!-- Chart 7 -->
+        <div class="chart-row">
+            <div id="vis7"></div>
+            
+            <div class="chart-description">
+                <h3 class="chart-header">Peoples' Opinion on Australian Music</h3>
+                <p class="chart-text">A recent survey publised by The Push in 2025 for a report on Young Australiand and music show how supportive young Australians around 16-25 are towards Australian music.</p>
+                <p class="chart-text">This chart shows the distribution of opinions among young Australians regarding their support for Australian music. The difference between the number of people who want more Australian music is significant, which indicates that a massive demand for it.</p>
+            </div>
+        </div>
+
+        <hr class="chart-divider">
+
+        <!-- Chart 10 -->
+        <div class="chart-row">
+            <div id="vis10"></div>
+            
+            <div class="chart-description">
+                <h3 class="chart-header">Australians attitudes towards discovering more music</h3>
+                <p class="chart-text">This chart illustrates the percentage of respondents who would like to listen to more Australian music.</p>
+                <p class="chart-text">Clearly the population wants more of their music and they want to support the growth of Australian bands too. Unfortunately the landscape for the music industry just isn't the same as it once was, which has negatively impacted how people discover new songs. But if the industry changes, the Australian market can rise to the top again, given how supportive and willing the population is.</p>
+            </div>
+
+        </div>
+
+        <hr class="empty-divider">
+        
+        </div> <footer class="footer">
+            <h2>Data Sources</h2>
+            <div class="footer-sources">
+                <p>ARIA Music Sales Reports (2000-2024)</p>
+                <p>The Push Youth Survey Report (2025)</p>
+                <p>IFPI Global Music Report (2000-2023)</p>
+                <p>Down, and Under Pressure: The Decline of the New Music Economy in Australia 2000–2024</p>
+                <p>Creative Australia: Listening In Research Series (2025)</p>
+            </div>
+        </footer>
+
+    <!-- Grabbing the visualization files-->
     <script type="text/javascript">
-        // Replace 'Live-Shows.json' with the exact local path to your file if it's in another folder
         var spec = "Graphs/Live-Shows.json";
         var spec2 = "Graphs/Sales-Value.json";
         var spec3 = "Graphs/Sales-by-Genre.json";
         var spec4 = "Graphs/Sales-by-Origin.json";
         var spec5 = "Graphs/Physical-Digital.json";
+        var spec6 = "Graphs/Top-Markets.json";
+        var spec7 = "Graphs/Australian-Music.json";
+        var spec8 = "Graphs/Top-Markets-Bump.json";
+        var spec9 = "Graphs/Age-Groups.json";
+        var spec10 = "Graphs/Want-More.json";
         
         vegaEmbed('#vis', spec, {"actions": false})
             .then(function(result) {
-                // Access the Vega View instance if you want to perform advanced API adjustments later
+                // First chart
             })
             .catch(console.error);
 
@@ -79,9 +213,37 @@
                 // Fifth chart
             })
             .catch(console.error);
-    </script>
 
-    
+        vegaEmbed('#vis6', spec6, {"actions": false})
+            .then(function(result) {
+                // Sixth chart
+            })
+            .catch(console.error);
+
+        vegaEmbed('#vis7', spec7, {"actions": false})
+            .then(function(result) {
+                // Seventh chart
+            })
+            .catch(console.error);
+
+        vegaEmbed('#vis8', spec8, {"actions": false})
+            .then(function(result) {
+                // Eighth chart
+            })
+            .catch(console.error);
+
+        vegaEmbed('#vis9', spec9, {"actions": false})
+            .then(function(result) {
+                // Ninth chart
+            })
+            .catch(console.error);
+
+        vegaEmbed('#vis10', spec10, {"actions": false})
+            .then(function(result) {
+                // Tenth chart
+            })
+            .catch(console.error);
+    </script>
 
 </body>
 </html>
