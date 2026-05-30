@@ -1,0 +1,14 @@
+[
+  {"Status": "Strongly agree", "Category": "I would like to listen to more Australian music", "Percentage": 25},
+  {"Status": "Agree", "Category": "I would like to listen to more Australian music", "Percentage": 40},
+  {"Status": "Neutral", "Category": "I would like to listen to more Australian music", "Percentage": 28},
+  {"Status": "Disagree", "Category": "I would like to listen to more Australian music", "Percentage": 4},
+  {"Status": "Strongly disagree", "Category": "I would like to listen to more Australian music", "Percentage": 2},
+  {"Status": "Don't know/not sure", "Category": "I would like to listen to more Australian music", "Percentage": 1},
+  {"Status": "Strongly agree", "Category": "I can easily find and access Australian music", "Percentage": 28},
+  {"Status": "Agree", "Category": "I can easily find and access Australian music", "Percentage": 47},
+  {"Status": "Neutral", "Category": "I can easily find and access Australian music", "Percentage": 18},
+  {"Status": "Disagree", "Category": "I can easily find and access Australian music", "Percentage": 5},
+  {"Status": "Strongly disagree", "Category": "I can easily find and access Australian music", "Percentage": 1},
+  {"Status": "Don't know/not sure", "Category": "I can easily find and access Australian music", "Percentage": 1}
+]
