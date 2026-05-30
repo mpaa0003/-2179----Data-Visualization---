@@ -11,8 +11,10 @@
       "name": "Select_Year",
       "value": 2022,
       "bind": {
-        "input": "select",
-        "options": [2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022],
+        "input": "range", 
+        "min": 2013,
+        "max": 2022,
+        "step": 1,
         "name": "Choose Year: "
       }
     }
@@ -52,5 +54,9 @@
       }
     }
   ],
-  "config": {}
+  "config": {
+    "view": {
+      "stroke": "transparent"
+    }
+  }
 }

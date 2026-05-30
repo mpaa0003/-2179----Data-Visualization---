@@ -33,8 +33,9 @@
       "axis": {
         "title": null, 
         "labelPadding": 10,
-        "labelLimit": 200,
-        "labelLineHeight": 14
+        "labelLineHeight": 14,
+        "labelLimit": 300,
+        "labelFontSize": 14
       }
     },
     "color": {

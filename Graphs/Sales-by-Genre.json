@@ -21,7 +21,11 @@
       "type": "nominal",
       "title": "Music Genre",
       "sort": null,
-      "axis": {"labelLimit": 250}
+      "axis": {
+        "labelLimit": 250,
+        "labelFontSize": 13,
+        "titleFontSize": 16
+      }
     }
   },
   "layer": [
