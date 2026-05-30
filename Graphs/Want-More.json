@@ -1,0 +1,40 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 650,
+  "height": 200,
+  "data": {
+    "url": "https://raw.githubusercontent.com/mpaa0003/-2179----Data-Visualization---/refs/heads/main/Asgn2_Datasets/WantMore.json"
+  },
+  "mark": "bar",
+  "encoding": {
+    "y": {
+      "field": "Category", 
+      "type": "nominal", 
+      "axis": {
+        "title": null,
+        "labelExpr": "split(replace(datum.value, ' Australian', '|Australian'), '|')",
+        "labelFontSize": 14
+      }
+    },
+    "x": {
+      "field": "Percentage", 
+      "type": "quantitative", 
+      "stack": "zero", 
+      "axis": null
+    },
+    "color": {
+      "field": "Status",
+      "type": "nominal",
+      "scale": {
+        "domain": ["Strongly agree", "Agree", "Neutral", "Disagree", "Strongly disagree", "Don't know/not sure"],
+        "range": ["#2b2b63", "#a880ff", "#d1c1ff", "#ffad8c", "#ff4500", "#000000"]
+      },
+      "legend": {
+        "direction": "horizontal", 
+        "orient": "bottom", 
+        "title": null,
+        "labelFontSize": 14
+      }
+    }
+  }
+}

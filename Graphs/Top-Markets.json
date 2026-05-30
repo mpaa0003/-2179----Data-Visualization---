@@ -1,0 +1,122 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "width": 800,
+  "height": 500,
+  "params": [
+    {
+      "name": "Year_Selection",
+      "value": 2000,
+      "bind": {
+        "input": "range",
+        "min": 2000,
+        "max": 2023,
+        "step": 1,
+        "name": "Select Year: "
+      }
+    }
+  ],
+  "projection": {"type": "equalEarth"},
+  "layer": [
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/FIT3179/Vega-Lite/main/3_choropleth_map/js/ne_110m_admin_0_countries.topojson",
+        "format": {"type": "topojson", "feature": "ne_110m_admin_0_countries"}
+      },
+      "mark": {"type": "geoshape", "fill": "lightgray", "stroke": "white"}
+    },
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/mpaa0003/-2179----Data-Visualization---/refs/heads/main/Asgn2_Datasets/TopMarkets.json"
+      },
+      "transform": [
+        {"filter": "datum.Year == Year_Selection"},
+        {
+          "lookup": "Country",
+          "from": {
+            "data": {
+              "url": "https://raw.githubusercontent.com/FIT3179/Vega-Lite/main/3_choropleth_map/js/ne_110m_admin_0_countries.topojson",
+              "format": {"type": "topojson", "feature": "ne_110m_admin_0_countries"}
+            },
+            "key": "properties.NAME"
+          },
+          "as": "geo"
+        }
+      ],
+      "mark": {"type": "geoshape", "stroke": "black", "strokeWidth": 0.5},
+      "encoding": {
+        "shape": {"field": "geo", "type": "geojson"},
+        "color": {
+          "field": "Rank",
+          "type": "ordinal",
+          "scale": {
+            "type": "ordinal",
+            "domain": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+            "scheme": "reds",
+            "reverse": true
+          },
+          "legend": {
+            "title": "Global Rank",
+            "orient": "bottom",
+            "direction": "horizontal",
+            "columns": 11,
+            "symbolType": "square",
+            "symbolSize": 160
+          }
+        },
+        "tooltip": [
+          {"field": "Country", "type": "nominal"},
+          {"field": "Rank", "type": "ordinal", "title": "Rank"},
+          {"field": "Value", "type": "quantitative", "title": "Value ($M)", "format": ","}
+        ]
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "lon": 83, "lat": -37,
+            "lon2": 133, "lat2": -25
+          }
+        ]
+      },
+      "mark": {
+        "type": "rule",
+        "color": "gray",
+        "strokeWidth": 1.5,
+        "strokeDash": [4, 4]
+      },
+      "encoding": {
+        "longitude": {"field": "lon", "type": "quantitative"},
+        "latitude": {"field": "lat", "type": "quantitative"},
+        "longitude2": {"field": "lon2", "type": "quantitative"},
+        "latitude2": {"field": "lat2", "type": "quantitative"}
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "lon": 83.7751, 
+            "lat": -37.2744, 
+            "description": ["Consistently shows up", "within the top 10", "largest music markets"]
+          }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "dy": 15,
+        "fontSize": 11,
+        "color": "#0f0f0f",
+        "baseline": "top",
+        "align": "center",
+        "clip": false
+      },
+      "encoding": {
+        "longitude": {"field": "lon", "type": "quantitative"},
+        "latitude": {"field": "lat", "type": "quantitative"},
+        "text": {"field": "description"}
+      }
+    }
+  ],
+  "config": {}
+}

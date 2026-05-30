@@ -1,0 +1,46 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "width": 600,
+  "height": 300,
+  "data": {
+    "url": "https://raw.githubusercontent.com/mpaa0003/-2179----Data-Visualization---/refs/heads/main/Asgn2_Datasets/AgeGroups.json"
+  },
+  "mark": {"type": "circle", "filled": true},
+  "encoding": {
+    "x": {
+      "field": "Frequency",
+      "type": "ordinal",
+      "sort": ["Daily", "A few times a week", "Weekly", "Fortnightly", "At least a few times a month", "Monthly or less frequently"],
+      "axis": {
+        "labelAngle": -45, 
+        "title": "Engagement Frequency",
+        "labelFontSize": 14
+      }
+    },
+    "y": {
+      "field": "Age",
+      "type": "nominal",
+      "title": "Age Group",
+      "axis": {
+        "labelFontSize": 14
+      },
+      "sort": ["All Respondents", "Under 25", "25–39", "40 and over"]
+    },
+    "size": {
+      "field": "Percent",
+      "type": "quantitative",
+      "scale": {"range": [100, 2000]},
+      "title": "Percentage (%)"
+    },
+    "color": {
+      "field": "Age",
+      "type": "nominal",
+      "legend": null
+    },
+    "tooltip": [
+      {"field": "Age", "type": "nominal"},
+      {"field": "Frequency", "type": "nominal"},
+      {"field": "Percent", "type": "quantitative"}
+    ]
+  }
+}

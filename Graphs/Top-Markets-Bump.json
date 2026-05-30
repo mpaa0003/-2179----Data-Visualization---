@@ -1,0 +1,33 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "width": 760,
+  "height": 400,
+  "title": "Music Market Rank by Country (2000-2023)",
+  "data": {
+    "url": "https://raw.githubusercontent.com/mpaa0003/-2179----Data-Visualization---/refs/heads/main/Asgn2_Datasets/TopMarkets.json"
+  },
+  "mark": {
+    "type": "line",
+    "point": {"filled": true, "size": 60},
+    "strokeWidth": 3
+  },
+  "encoding": {
+    "x": {"field": "Year", "type": "ordinal", "axis": {"labelAngle": 0}},
+    "y": {
+      "field": "Rank",
+      "type": "quantitative",
+      "scale": {"reverse": true, "domain": [1, 10]},
+      "axis": {"tickCount": 10}
+    },
+    "color": {
+      "field": "Country",
+      "type": "nominal",
+      "scale": {"scheme": "tableau20"}
+    },
+    "tooltip": [
+      {"field": "Country", "type": "nominal"},
+      {"field": "Year", "type": "ordinal"},
+      {"field": "Rank", "type": "quantitative"}
+    ]
+  }
+}

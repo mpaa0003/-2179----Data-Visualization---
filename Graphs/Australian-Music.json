@@ -1,0 +1,56 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "width": 560,
+  "height": 400,
+  "data": {
+    "url": "https://raw.githubusercontent.com/mpaa0003/-2179----Data-Visualization---/refs/heads/main/Asgn2_Datasets/AustralianMusic.json"
+  },
+  "transform": [
+    {
+      "pivot": "Status",
+      "value": "Percentage",
+      "groupby": ["Category"]
+    }
+  ],
+  "layer": [
+    {
+      "mark": {"type": "rule", "color": "#ccc", "strokeWidth": 2},
+      "encoding": {
+        "y": {"field": "Category", "type": "nominal", "sort": "-x"},
+        "x": {"field": "Agree", "type": "quantitative"},
+        "x2": {"field": "Disagree"}
+      }
+    },
+    {
+      "mark": {"type": "circle", "size": 300},
+      "encoding": {
+        "y": {"field": "Category", "type": "nominal"},
+        "x": {"field": "Agree", "type": "quantitative"},
+        "color": {"value": "#1a1c6b"},
+        "tooltip": [{"field": "Category"}, {"field": "Agree", "title": "Agree %"}]
+      }
+    },
+    {
+      "mark": {"type": "circle", "size": 300},
+      "encoding": {
+        "y": {"field": "Category", "type": "nominal"},
+        "x": {"field": "Disagree", "type": "quantitative"},
+        "color": {"value": "#5b60a1"},
+        "tooltip": [{"field": "Category"}, {"field": "Disagree", "title": "Disagree %"}]
+      }
+    }
+  ],
+  "encoding": {
+    "y": {
+      "field": "Category",
+      "type": "nominal",
+      "axis": {
+        "title": null,
+        "labelLimit": 400,
+        "labelFontSize": 14,
+        "labelLineHeight": 18,
+        "labelExpr": "split(replace(datum.value, 'music but', 'music|but'), '|')"
+      }
+    }
+  }
+}
