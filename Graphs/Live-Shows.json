@@ -26,6 +26,7 @@
       "field": "percent", 
       "axis": {"labelPadding": 10}
     },
+    
     "y": {
       "field": "wrapped_category",
       "type": "nominal",
